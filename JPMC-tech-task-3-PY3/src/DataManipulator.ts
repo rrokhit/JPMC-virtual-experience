@@ -9,6 +9,7 @@ export interface Row {
 
 export class DataManipulator {
   static generateRow(serverResponds: ServerRespond[]): Row[] {
+    const priceABC = (serverResponds[0].top_ask.price + serverResponds[0].top_bid.price);
     return serverResponds.map((el: any) => {
       return {
         stock: el.stock,
